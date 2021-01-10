@@ -25,15 +25,15 @@ class Christmas2021 {
       let arr = []
       for (const sirname in family) {
         if (this.lastName !== sirname) {
-          arr = [...arr, ...family[sirname]]
+          arr = [...arr, ...family[sirname]].filter(({name, beenPicked}) => name !== this.prevPerson && !beenPicked);
         }
       }
-    return arr.filter(({name, beenPicked}) => name !== this.prevPerson && !beenPicked);
+    return arr;
     }
   }
 }
 
-// This is all of the individual family members, their first name, their last name, and the person they were assigned last year
+// This is list of all participating family members, their first name, their last name, and the person they were had last year
 const Scott = new Christmas2021('Scott', 'Romonosky', 'Steve');
 const Amy = new Christmas2021('Amy', 'Romonosky', 'Mary Lafreniere');
 const Dana = new Christmas2021('Dana', 'Romonosky', 'Kate');
@@ -66,7 +66,7 @@ const personArr = [
   Scott, Amy, Dana, Clair,
   MylesSr, Jenny, MaryLaffey, MylesJr, Kate,
   Denis, MaryLafreniere, Anna, Emily, Paul,
-  John, Kathryn, Ian,
+  John, Kathryn, Ian, Noel,
   Steve, Julie, Erin, Lily
 ];
 
@@ -194,4 +194,4 @@ var family = {
   ]
 }
 
-// The results of this function are hidden and are not accessable to visitor of this page
+// The results of this function are hidden and are not accessible to visitor of this page
