@@ -1,4 +1,5 @@
-// This is the actual function that assigns a random family member
+// This is algorithm that assigns a random family member
+// The function filters out yourself, your emmediate family, and the person you had last year
 const personPicker = (family, personArr) => {
   personArr.forEach(person => {
     const currentAvailableFamilyArray = person.availableFamilyArray()
